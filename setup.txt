@@ -1,0 +1,26 @@
+# system packages
+sudo apt install fswebcam
+sudo apt-get install cmake
+
+# pip
+sudo pip3 install face_recognition
+
+# setup
+create folder `me` in face_lock.py file location.
+and place all your selfies taken by laptop webacame. 
+...
+├── face_lock.py
+├── me
+│   ├── me11340.jpg
+│   ├── me25658.jpg
+│   ├── me25711.jpg
+│   ├── me25730.jpg
+│   └── me.jpg
+└── setup.txt
+
+# open terminal and create new crontab.
+crontab -e
+
+# runs evaery 5 sec
+*/1 * * * * sh /home/ravi/sun/face/cron.sh > /home/ravi/sun/face/face.log 2>&1
+/1 * * * * export DISPLAY=:0 && sh /home/ravi/sun/face/cron.sh > /home/ravi/sun/face/face.log 2>&1
